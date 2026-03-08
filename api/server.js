@@ -3,7 +3,7 @@ const fs = require('fs');
 const url = require('url');
 
 function readDb() {
-  const dbPath = path.join(process.cwd(), 'db.json');
+  const dbPath = path.join(__dirname, 'db.json');
   return JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
 }
 
