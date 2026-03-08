@@ -8,7 +8,7 @@ import { Category } from '../models/category.model';
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = '/api';
   private productsSubject = new BehaviorSubject<Product[]>([]);
   public products$ = this.productsSubject.asObservable();
 

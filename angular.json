@@ -93,7 +93,8 @@
               "buildTarget": "grocery-shop:build:production"
             },
             "development": {
-              "buildTarget": "grocery-shop:build:development"
+              "buildTarget": "grocery-shop:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
