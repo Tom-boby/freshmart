@@ -1,0 +1,185 @@
+.checkout-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1b5e20;
+  margin-bottom: 32px;
+}
+
+.checkout-layout {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.checkout-form-section {
+  flex: 1;
+}
+
+.form-card {
+  border-radius: 16px !important;
+  padding: 32px !important;
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #333;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 12px;
+    margin-top: 8px;
+  }
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-field {
+  flex: 1;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.payment-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+
+  mat-radio-button {
+    mat-icon {
+      vertical-align: middle;
+      margin-right: 4px;
+      font-size: 20px;
+    }
+  }
+}
+
+.checkout-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+
+  button {
+    flex: 1;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+}
+
+.checkout-summary {
+  width: 360px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 80px;
+}
+
+.summary-card {
+  border-radius: 16px !important;
+  padding: 24px !important;
+
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+}
+
+.summary-items {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+
+  .summary-item-image {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .summary-item-info {
+    flex: 1;
+
+    .summary-item-name {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .summary-item-qty {
+      font-size: 12px;
+      color: #999;
+    }
+  }
+
+  .summary-item-price {
+    font-weight: 600;
+    font-size: 14px;
+  }
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #555;
+}
+
+.total-line {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1b5e20;
+  margin-top: 10px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 16px 0;
+}
+
+@media (max-width: 768px) {
+  .checkout-layout {
+    flex-direction: column;
+  }
+
+  .checkout-summary {
+    width: 100%;
+    position: static;
+    order: -1;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}

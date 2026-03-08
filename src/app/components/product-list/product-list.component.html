@@ -1,0 +1,98 @@
+<div class="product-list-container">
+  <div class="page-header">
+    <h1>Our Products</h1>
+    <p>Fresh groceries delivered to your door</p>
+  </div>
+
+  <div class="content-layout">
+    <!-- Filters Sidebar -->
+    <aside class="filters-sidebar">
+      <div class="filter-header">
+        <h3><mat-icon>filter_list</mat-icon> Filters</h3>
+        <button mat-button color="primary" (click)="clearFilters()" class="clear-btn">Clear All</button>
+      </div>
+
+      <!-- Search -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Search products</mat-label>
+        <input matInput [(ngModel)]="searchTerm" placeholder="Search...">
+        <mat-icon matPrefix>search</mat-icon>
+      </mat-form-field>
+
+      <!-- Category Filter -->
+      <div class="filter-group">
+        <h4>Category</h4>
+        <mat-chip-set>
+          <mat-chip [class.selected-chip]="selectedCategory === 'All'"
+                    (click)="selectedCategory = 'All'">All</mat-chip>
+          <mat-chip *ngFor="let category of categories"
+                    [class.selected-chip]="selectedCategory === category.name"
+                    (click)="selectedCategory = category.name">
+            {{ category.name }}
+          </mat-chip>
+        </mat-chip-set>
+      </div>
+
+
+
+      <!-- Stock Filter -->
+      <div class="filter-group">
+        <mat-checkbox [(ngModel)]="showInStockOnly" color="primary">
+          Show in-stock only
+        </mat-checkbox>
+      </div>
+    </aside>
+
+    <!-- Products Grid -->
+    <main class="products-main">
+      <div class="results-bar">
+        <span class="results-count">{{ filteredProducts.length }} products found</span>
+        <span class="active-filter" *ngIf="selectedCategory !== 'All'">
+          <mat-icon>label</mat-icon> {{ selectedCategory }}
+          <mat-icon class="remove-filter" (click)="selectedCategory = 'All'">close</mat-icon>
+        </span>
+      </div>
+
+      <div class="products-grid">
+        <mat-card *ngFor="let product of filteredProducts"
+                  class="product-card"
+                  [appHighlightDiscount]="product.discount"
+                  [appOutOfStock]="product.stock">
+          <a [routerLink]="['/product', product.id]" class="product-image-link">
+            <img mat-card-image [src]="product.image" [alt]="product.name" class="product-image">
+          </a>
+          <mat-card-content>
+            <span class="product-category">{{ product.category }}</span>
+            <h3 class="product-name">
+              <a [routerLink]="['/product', product.id]">{{ product.name }}</a>
+            </h3>
+            <p class="product-description">{{ product.description | slice:0:80 }}...</p>
+            <div class="product-pricing">
+              <span class="product-price" *ngIf="product.discount === 0">
+                {{ product.price | currency }}
+              </span>
+              <ng-container *ngIf="product.discount > 0">
+                <span class="original-price">{{ product.price | currency }}</span>
+                <span class="discounted-price">{{ getDiscountedPrice(product) | currency }}</span>
+              </ng-container>
+              <span class="product-unit">/ {{ product.unit }}</span>
+            </div>
+            <div class="stock-info" [ngClass]="{'low-stock': product.stock > 0 && product.stock < 20, 'out-stock': product.stock === 0}">
+              <mat-icon>{{ product.stock > 0 ? 'check_circle' : 'cancel' }}</mat-icon>
+              <span *ngIf="product.stock > 20">In Stock</span>
+              <span *ngIf="product.stock > 0 && product.stock <= 20">Only {{ product.stock }} left!</span>
+              <span *ngIf="product.stock === 0">Out of Stock</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="no-results" *ngIf="filteredProducts.length === 0">
+        <mat-icon>search_off</mat-icon>
+        <h3>No products found</h3>
+        <p>Try adjusting your filters or search term</p>
+        <button mat-stroked-button color="primary" (click)="clearFilters()">Clear Filters</button>
+      </div>
+    </main>
+  </div>
+</div>

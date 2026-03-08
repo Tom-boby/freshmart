@@ -1,0 +1,56 @@
+<div class="auth-container">
+  <mat-card class="auth-card">
+    <div class="auth-header">
+      <mat-icon class="auth-icon">lock_open</mat-icon>
+      <h1>Welcome Back</h1>
+      <p>Sign in to your FreshMart account</p>
+    </div>
+
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="auth-form">
+      <div class="error-message" *ngIf="loginError">
+        <mat-icon>error_outline</mat-icon>
+        {{ loginError }}
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" [(ngModel)]="email" name="email" required email
+               #emailField="ngModel" placeholder="Enter your email">
+        <mat-icon matPrefix>email</mat-icon>
+        <mat-error *ngIf="emailField.invalid && emailField.touched">
+          <span *ngIf="emailField.errors?.['required']">Email is required</span>
+          <span *ngIf="emailField.errors?.['email']">Invalid email format</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hidePassword ? 'password' : 'text'"
+               [(ngModel)]="password" name="password" required minlength="4"
+               #passwordField="ngModel" placeholder="Enter your password">
+        <mat-icon matPrefix>lock</mat-icon>
+        <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
+          <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        <mat-error *ngIf="passwordField.invalid && passwordField.touched">
+          <span *ngIf="passwordField.errors?.['required']">Password is required</span>
+          <span *ngIf="passwordField.errors?.['minlength']">Minimum 4 characters</span>
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" type="submit" class="auth-btn"
+              [disabled]="loginForm.invalid">
+        <mat-icon>login</mat-icon> Sign In
+      </button>
+    </form>
+
+    <div class="auth-footer">
+      <p>Don't have an account? <a routerLink="/signup">Create one</a></p>
+      <div class="demo-credentials">
+        <p><strong>Demo Accounts:</strong></p>
+        <p>Admin: admin&#64;grocery.com / admin123</p>
+        <p>Customer: tom&#64;example.com / tom123</p>
+      </div>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,59 @@
+<div class="orders-container">
+  <h1 class="page-title"><mat-icon>receipt_long</mat-icon> My Orders</h1>
+
+  <div *ngIf="orders.length === 0" class="no-orders">
+    <mat-icon>inbox</mat-icon>
+    <h2>No orders yet</h2>
+    <p>Start shopping to see your orders here!</p>
+    <a mat-flat-button color="primary" routerLink="/products">Browse Products</a>
+  </div>
+
+  <div class="orders-list">
+    <mat-card *ngFor="let order of orders; let i = index" class="order-card">
+      <div class="order-header">
+        <div class="order-id">
+          <span class="label">Order</span>
+          <span class="value">#{{ orders.length - i }}</span>
+        </div>
+        <div class="order-date">
+          <mat-icon>calendar_today</mat-icon>
+          {{ order.date | date:'mediumDate' }}
+        </div>
+        <div class="order-status" [ngStyle]="{'background': getStatusColor(order.status) + '20', 'color': getStatusColor(order.status)}">
+          <mat-icon>{{ getStatusIcon(order.status) }}</mat-icon>
+          {{ order.status | titlecase }}
+        </div>
+      </div>
+
+      <div class="order-items">
+        <div class="order-item" *ngFor="let item of order.items">
+          <img [src]="item.image" class="item-image">
+          <div class="item-info">
+            <span class="item-name">{{ item.productName }}</span>
+            <span class="item-qty">Qty: {{ item.quantity }}</span>
+          </div>
+          <span class="item-price">{{ (item.price * item.quantity) | currency }}</span>
+        </div>
+      </div>
+
+      <div class="order-footer">
+        <div class="order-details">
+          <span><mat-icon>location_on</mat-icon> {{ order.address }}</span>
+          <span><mat-icon>payment</mat-icon> {{ order.paymentMethod }}</span>
+        </div>
+        <div class="order-actions-and-total">
+          <button mat-stroked-button color="warn" *ngIf="order.status === 'pending'" (click)="cancelOrder(order.id)" class="action-btn">
+            Cancel Order
+          </button>
+          <button mat-stroked-button color="warn" *ngIf="order.status === 'cancelled'" (click)="deleteOrder(order.id)" class="action-btn">
+            <mat-icon>delete</mat-icon> Delete
+          </button>
+          <div class="order-total">
+            <span class="total-label">Total:</span>
+            <span class="total-value">{{ order.total | currency }}</span>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

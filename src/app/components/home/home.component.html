@@ -1,0 +1,197 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Fresh Groceries,<br><span class="highlight">Delivered to You</span></h1>
+      <p class="hero-subtitle">
+        Shop from thousands of fresh products, delivered right to your doorstep.
+        Quality ingredients for every meal.
+      </p>
+      <div class="hero-actions">
+        <a mat-flat-button color="primary" routerLink="/products" class="shop-btn">
+          <mat-icon>shopping_basket</mat-icon>
+          Shop Now
+        </a>
+        <a mat-stroked-button routerLink="/products" class="explore-btn">
+          Explore Categories
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Products</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Delivery</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Fresh</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="floating-card card-1">🍎</div>
+      <div class="floating-card card-2">🥦</div>
+      <div class="floating-card card-3">🥛</div>
+      <div class="floating-card card-4">🍞</div>
+      <div class="floating-card card-5">🥑</div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories-section">
+    <h2 class="section-title">
+      <mat-icon>category</mat-icon>
+      Browse by Category
+    </h2>
+    <div class="categories-grid">
+      <a *ngFor="let category of categories"
+         class="category-card"
+         [routerLink]="['/products']"
+         [queryParams]="{category: category.name}">
+        <div class="category-image-wrapper">
+          <img *ngIf="category.image" [src]="category.image" [alt]="category.name" class="category-image">
+          <ng-container *ngIf="!category.image">
+            <mat-icon *ngIf="category.icon.length > 2" class="category-icon">{{ category.icon }}</mat-icon>
+            <span *ngIf="category.icon.length <= 2" class="category-emoji">{{ category.icon }}</span>
+          </ng-container>
+        </div>
+        <span class="category-name">{{ category.name }}</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="featured-section">
+    <h2 class="section-title">
+      <mat-icon>star</mat-icon>
+      Featured Products
+    </h2>
+    <div class="products-grid">
+      <mat-card *ngFor="let product of featuredProducts"
+                class="product-card"
+                [appHighlightDiscount]="product.discount">
+        <a [routerLink]="['/product', product.id]" class="product-image-link">
+          <img mat-card-image [src]="product.image" [alt]="product.name" class="product-image">
+        </a>
+        <mat-card-content>
+          <span class="product-category">{{ product.category }}</span>
+          <h3 class="product-name">
+            <a [routerLink]="['/product', product.id]">{{ product.name }}</a>
+          </h3>
+          <div class="product-pricing">
+            <span class="product-price" *ngIf="product.discount === 0">
+              {{ product.price | currency }}
+            </span>
+            <ng-container *ngIf="product.discount > 0">
+              <span class="original-price">{{ product.price | currency }}</span>
+              <span class="discounted-price">{{ getDiscountedPrice(product) | currency }}</span>
+            </ng-container>
+            <span class="product-unit">/ {{ product.unit }}</span>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-flat-button color="primary" (click)="addToCart(product)"
+                  [disabled]="product.stock === 0" class="add-cart-btn">
+            <mat-icon>add_shopping_cart</mat-icon>
+            {{ product.stock === 0 ? 'Out of Stock' : 'Add to Cart' }}
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="view-all">
+      <a mat-stroked-button color="primary" routerLink="/products">View All Products →</a>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <div class="feature">
+      <mat-icon class="feature-icon">local_shipping</mat-icon>
+      <div class="feature-content">
+        <h3>Free Delivery</h3>
+        <p>On orders over ₹4150</p>
+      </div>
+    </div>
+    <div class="feature">
+      <mat-icon class="feature-icon">verified</mat-icon>
+      <div class="feature-content">
+        <h3>Quality Guaranteed</h3>
+        <p>100% fresh or money back</p>
+      </div>
+    </div>
+    <div class="feature support-feature">
+      <mat-icon class="feature-icon">support_agent</mat-icon>
+      <div class="feature-content">
+        <h3>24/7 Support</h3>
+        <p>Always here to help</p>
+      </div>
+    </div>
+    <div class="feature">
+      <mat-icon class="feature-icon">payments</mat-icon>
+      <div class="feature-content">
+        <h3>Secure Payment</h3>
+        <p>Multiple payment options</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <h2>Get in Touch</h2>
+      <p>For any questions, reach out to us at:</p>
+      <div class="contact-links">
+        <div class="contact-card" (click)="openContactDialog('email', 'tomboby30@gmail.com')">
+          <mat-icon>email</mat-icon> 
+          <span>tomboby30&#64;gmail.com</span>
+        </div>
+        <div class="contact-card" (click)="openContactDialog('email', 'freshmart@gmail.com')">
+          <mat-icon>email</mat-icon> 
+          <span>freshmart&#64;gmail.com</span>
+        </div>
+        <div class="contact-card" (click)="openContactDialog('phone', '8075157032')">
+          <mat-icon>phone</mat-icon> 
+          <span>8075157032</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feedback & Suggestions Section -->
+  <section class="feedback-section">
+    <div class="feedback-container">
+      <h2>We'd Love to Hear From You!</h2>
+      <p>Suggest new products or leave us feedback.</p>
+      
+      <div class="rating-box">
+        <span class="rating-label">Rate your experience:</span>
+        <div class="stars">
+          <mat-icon *ngFor="let star of [1, 2, 3, 4, 5]" 
+                    (click)="setRating(star)"
+                    (mouseenter)="setHover(star)"
+                    (mouseleave)="setHover(0)"
+                    [class.active]="star <= (hoverRating || rating)">
+            star
+          </mat-icon>
+        </div>
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Suggest a Product</mat-label>
+        <input matInput [(ngModel)]="suggestion" placeholder="E.g., Almond milk, Chia seeds...">
+        <mat-icon matSuffix>add_shopping_cart</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Tell us about your experience</mat-label>
+        <textarea matInput [(ngModel)]="feedback" rows="4" placeholder="Your feedback helps us improve..."></textarea>
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" class="submit-btn" (click)="submitFeedback()" [disabled]="!rating && !suggestion && !feedback">
+        <mat-icon>send</mat-icon> Submit Feedback
+      </button>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,77 @@
+<div class="auth-container">
+  <mat-card class="auth-card">
+    <div class="auth-header">
+      <mat-icon class="auth-icon">person_add</mat-icon>
+      <h1>Create Account</h1>
+      <p>Join FreshMart for fresh groceries</p>
+    </div>
+
+    <form #signupForm="ngForm" (ngSubmit)="onSubmit()" class="auth-form">
+      <div class="error-message" *ngIf="signupError">
+        <mat-icon>error_outline</mat-icon>
+        {{ signupError }}
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Full Name</mat-label>
+        <input matInput [(ngModel)]="name" name="name" required minlength="3"
+               #nameField="ngModel">
+        <mat-icon matPrefix>person</mat-icon>
+        <mat-error *ngIf="nameField.invalid">Name is required (min 3 chars)</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" [(ngModel)]="email" name="email" required email
+               #emailField="ngModel">
+        <mat-icon matPrefix>email</mat-icon>
+        <mat-error *ngIf="emailField.invalid">Valid email is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Phone</mat-label>
+        <input matInput [(ngModel)]="phone" name="phone" required
+               #phoneField="ngModel">
+        <mat-icon matPrefix>phone</mat-icon>
+        <mat-error *ngIf="phoneField.invalid">Phone is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Address</mat-label>
+        <input matInput [(ngModel)]="address" name="address" required
+               #addressField="ngModel">
+        <mat-icon matPrefix>location_on</mat-icon>
+        <mat-error *ngIf="addressField.invalid">Address is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hidePassword ? 'password' : 'text'"
+               [(ngModel)]="password" name="password" required minlength="6"
+               #passwordField="ngModel">
+        <mat-icon matPrefix>lock</mat-icon>
+        <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
+          <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        <mat-error *ngIf="passwordField.invalid">Min 6 characters required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required
+               #confirmField="ngModel">
+        <mat-icon matPrefix>lock</mat-icon>
+        <mat-error *ngIf="confirmField.invalid">Confirm your password</mat-error>
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" type="submit" class="auth-btn"
+              [disabled]="signupForm.invalid">
+        <mat-icon>person_add</mat-icon> Create Account
+      </button>
+    </form>
+
+    <div class="auth-footer">
+      <p>Already have an account? <a routerLink="/login">Sign in</a></p>
+    </div>
+  </mat-card>
+</div>

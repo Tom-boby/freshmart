@@ -1,0 +1,118 @@
+<div class="product-detail-container" *ngIf="product">
+  <div class="breadcrumb">
+    <a routerLink="/products">← Back to Products</a>
+  </div>
+
+  <div class="product-detail">
+    <div class="product-image-section">
+      <img [src]="product.image" [alt]="product.name" class="main-image">
+      <div class="discount-badge" *ngIf="product.discount > 0">
+        -{{ product.discount }}% OFF
+      </div>
+    </div>
+
+    <div class="product-info-section">
+      <span class="product-category-tag">{{ product.category }}</span>
+      <h1 class="product-title">{{ product.name }}</h1>
+
+      <div class="pricing-section">
+        <div class="price-container" *ngIf="product.discount === 0">
+          <span class="current-price">{{ product.price | currency }}</span>
+          <span class="unit-label">/ {{ product.unit }}</span>
+        </div>
+        <div class="price-container" *ngIf="product.discount > 0">
+          <span class="original-price-strike">{{ product.price | currency }}</span>
+          <span class="current-price sale">{{ getDiscountedPrice() | currency }}</span>
+          <span class="unit-label">/ {{ product.unit }}</span>
+          <span class="savings">You save {{ (product.price - getDiscountedPrice()) | currency }}!</span>
+        </div>
+      </div>
+
+      <p class="product-description">{{ product.description }}</p>
+
+      <div class="stock-status-outer">
+        <div class="stock-status"
+             [ngClass]="{'in-stock': product.stock > 20, 'low-stock': product.stock > 0 && product.stock <= 20, 'out-of-stock': product.stock === 0}">
+          <mat-icon>{{ product.stock > 0 ? 'check_circle' : 'cancel' }}</mat-icon>
+          <span *ngIf="product.stock > 20">In Stock ({{ product.stock }} available)</span>
+          <span *ngIf="product.stock > 0 && product.stock <= 20">Low Stock – Only {{ product.stock }} left!</span>
+          <span *ngIf="product.stock === 0">Out of Stock</span>
+        </div>
+
+        <!-- Admin Stock Edit -->
+        <div class="admin-stock-actions" *ngIf="isAdmin">
+          <button mat-icon-button color="primary" (click)="toggleStockEdit()" *ngIf="!isEditingStock" matTooltip="Edit Stock">
+            <mat-icon>edit_calendar</mat-icon>
+          </button>
+          
+          <div class="stock-edit-form" *ngIf="isEditingStock">
+            <mat-form-field appearance="outline" class="qty-field">
+              <mat-label>Update Stock</mat-label>
+              <input matInput type="number" [(ngModel)]="newStock" min="0">
+            </mat-form-field>
+            <button mat-icon-button color="primary" (click)="saveStock()" [disabled]="newStock < 0">
+              <mat-icon>save</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="toggleStockEdit()">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="quantity-section" *ngIf="product.stock > 0">
+        <label class="qty-label">Quantity:</label>
+        <div class="quantity-control">
+          <button mat-icon-button (click)="decreaseQty()" [disabled]="quantity <= 1">
+            <mat-icon>remove</mat-icon>
+          </button>
+          <span class="qty-display">{{ quantity }}</span>
+          <button mat-icon-button (click)="increaseQty()" [disabled]="quantity >= product.stock">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button mat-flat-button color="primary" (click)="addToCart()"
+                [disabled]="product.stock === 0" class="add-to-cart-btn">
+          <mat-icon>add_shopping_cart</mat-icon>
+          {{ product.stock === 0 ? 'Out of Stock' : 'Add to Cart' }}
+        </button>
+        <a mat-stroked-button color="primary" routerLink="/cart" class="go-cart-btn">
+          <mat-icon>shopping_cart</mat-icon>
+          Go to Cart
+        </a>
+      </div>
+
+      <div class="product-features">
+        <div class="feature-item">
+          <mat-icon>local_shipping</mat-icon>
+          <span>Free delivery on orders over ₹4150</span>
+        </div>
+        <div class="feature-item">
+          <mat-icon>refresh</mat-icon>
+          <span>Fresh quality guaranteed</span>
+        </div>
+        <div class="feature-item">
+          <mat-icon>verified</mat-icon>
+          <span>100% organic certified</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Products -->
+  <section class="related-section" *ngIf="relatedProducts.length > 0">
+    <h2 class="section-title">Related Products</h2>
+    <div class="related-grid">
+      <mat-card *ngFor="let rp of relatedProducts" class="related-card" [routerLink]="['/product', rp.id]">
+        <img mat-card-image [src]="rp.image" [alt]="rp.name" class="related-image">
+        <mat-card-content>
+          <h4>{{ rp.name }}</h4>
+          <span class="related-price">{{ rp.price | currency }}</span>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+</div>

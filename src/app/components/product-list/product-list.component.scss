@@ -1,0 +1,369 @@
+.product-list-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1b5e20;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: #888;
+    font-size: 16px;
+  }
+}
+
+.content-layout {
+  display: flex;
+  gap: 32px;
+}
+
+// Filters Sidebar
+.filters-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+  position: sticky;
+  top: 80px;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .clear-btn {
+    font-size: 13px;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.filter-group {
+  margin-bottom: 24px;
+
+  h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+}
+
+.selected-chip {
+  background: #2e7d32 !important;
+  color: white !important;
+  
+  ::ng-deep .mdc-evolution-chip__text-label {
+    color: white !important;
+  }
+}
+
+.price-inputs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.price-field {
+  ::ng-deep {
+    .mat-mdc-text-field-wrapper {
+      justify-content: center !important;
+      padding: 0 12px !important;
+    }
+    
+    .mat-mdc-form-field-flex {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+    }
+
+    .mat-mdc-form-field-infix {
+      width: auto !important;
+      flex: none !important;
+      padding: 0 !important;
+      min-height: unset !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+
+    .mat-mdc-form-field-prefix {
+      position: static !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      padding: 0 !important;
+      margin-right: 2px !important;
+      order: 1 !important;
+    }
+    
+    input {
+      text-align: left !important;
+      width: 45px !important;
+      order: 2 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+
+      // Hide arrows/spinners
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      appearance: textfield;
+      -moz-appearance: textfield;
+    }
+
+    .mat-mdc-form-field-subscript-wrapper {
+      display: none !important;
+    }
+  }
+}
+
+.price-dash {
+  color: #999;
+}
+
+// Products Main
+.products-main {
+  flex: 1;
+}
+
+.results-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+
+  .results-count {
+    font-size: 14px;
+    color: #888;
+  }
+
+  .active-filter {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+
+    .remove-filter {
+      font-size: 16px;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+
+      &:hover {
+        color: #c62828;
+      }
+    }
+  }
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  border-radius: 16px !important;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .product-image-link {
+    display: block;
+    overflow: hidden;
+  }
+
+  .product-image {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  mat-card-content {
+    padding: 16px;
+  }
+
+  .product-category {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .product-name {
+    margin: 12px 0 4px;
+    font-size: 16px;
+    font-weight: 600;
+
+    a {
+      color: #333;
+      text-decoration: none;
+
+      &:hover { color: #2e7d32; }
+    }
+  }
+
+  .product-description {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .product-pricing {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+
+  .product-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2e7d32;
+  }
+
+  .original-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+  }
+
+  .discounted-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #e65100;
+  }
+
+  .product-unit {
+    font-size: 12px;
+    color: #999;
+  }
+
+  .stock-info {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: #43a047;
+
+    mat-icon {
+      font-size: 16px;
+      width: 16px;
+      height: 16px;
+    }
+
+    &.low-stock {
+      color: #ff9800;
+    }
+
+    &.out-stock {
+      color: #f44336;
+    }
+  }
+
+  mat-card-actions {
+    padding: 8px 16px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .add-cart-btn {
+    flex: 1;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+}
+
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+
+  mat-icon {
+    font-size: 64px;
+    width: 64px;
+    height: 64px;
+    color: #ccc;
+  }
+
+  h3 {
+    font-size: 20px;
+    color: #555;
+    margin-top: 16px;
+  }
+
+  p {
+    color: #888;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-layout {
+    flex-direction: column;
+  }
+
+  .filters-sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+}

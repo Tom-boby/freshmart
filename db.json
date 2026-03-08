@@ -1,0 +1,779 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Fresh Bananas",
+      "category": "Fruits",
+      "price": 170,
+      "description": "A bunch of ripe, organic bananas perfect for smoothies, snacking, or baking. Sourced from sustainable farms.",
+      "image": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400",
+      "stock": 199,
+      "discount": 0,
+      "unit": "bunch",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "name": "Red Apples",
+      "category": "Fruits",
+      "price": 290,
+      "description": "Crisp and juicy red delicious apples. Great for snacking, pies, and salads.",
+      "image": "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400",
+      "stock": 200,
+      "discount": 0,
+      "unit": "kg",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "name": "Organic Strawberries",
+      "category": "Fruits",
+      "price": 414,
+      "description": "Sweet and fresh organic strawberries, hand-picked for the best quality.",
+      "image": "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=400",
+      "stock": 75,
+      "discount": 20,
+      "unit": "box",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "name": "Baby Spinach",
+      "category": "Vegetables",
+      "price": 273,
+      "description": "Tender baby spinach leaves, pre-washed and ready for salads or cooking.",
+      "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=400",
+      "stock": 90,
+      "discount": 0,
+      "unit": "bag",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "name": "Sweet Bell Peppers",
+      "category": "Vegetables",
+      "price": 356,
+      "description": "Colorful mix of red, yellow, and green bell peppers. Crunchy and sweet.",
+      "image": "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400",
+      "stock": 85,
+      "discount": 15,
+      "unit": "pack",
+      "featured": true
+    },
+    {
+      "id": 7,
+      "name": "Whole Milk",
+      "category": "Dairy",
+      "price": 331,
+      "description": "Farm-fresh whole milk, pasteurized and rich in calcium and vitamins.",
+      "image": "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400",
+      "stock": 200,
+      "discount": 0,
+      "unit": "gallon",
+      "featured": true
+    },
+    {
+      "id": 8,
+      "name": "Greek Yogurt",
+      "category": "Dairy",
+      "price": 456,
+      "description": "Thick and creamy Greek yogurt with live active cultures. High in protein.",
+      "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400",
+      "stock": 60,
+      "discount": 10,
+      "unit": "pack",
+      "featured": false
+    },
+    {
+      "id": 9,
+      "name": "Cheddar Cheese",
+      "category": "Dairy",
+      "price": 580,
+      "description": "Aged sharp cheddar cheese block. Perfect for sandwiches, burgers, and snacking.",
+      "image": "https://images.unsplash.com/photo-1618164436241-4473940d1f5c?w=400",
+      "stock": 45,
+      "discount": 0,
+      "unit": "block",
+      "featured": false
+    },
+    {
+      "id": 10,
+      "name": "Sourdough Bread",
+      "category": "Bakery",
+      "price": 373,
+      "description": "Artisan sourdough bread, freshly baked with a crispy crust and soft interior.",
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400",
+      "stock": 30,
+      "discount": 0,
+      "unit": "loaf",
+      "featured": true
+    },
+    {
+      "id": 11,
+      "name": "Whole Wheat Bread",
+      "category": "Bakery",
+      "price": 273,
+      "description": "Nutritious whole wheat bread made with 100% whole grains.",
+      "image": "https://images.unsplash.com/photo-1598373182133-52452f7691ef?w=400",
+      "stock": 55,
+      "discount": 5,
+      "unit": "loaf",
+      "featured": false
+    },
+    {
+      "id": 14,
+      "name": "Ground Beef",
+      "category": "Meat",
+      "price": 622,
+      "description": "Premium quality lean ground beef, ideal for burgers, tacos, and pasta sauces.",
+      "image": "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?w=400",
+      "stock": 80,
+      "discount": 0,
+      "unit": "kg",
+      "featured": false
+    },
+    {
+      "id": 15,
+      "name": "Atlantic Salmon",
+      "category": "Meat",
+      "price": 1078,
+      "description": "Fresh Atlantic salmon fillets, rich in omega-3 fatty acids.",
+      "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400",
+      "stock": 40,
+      "discount": 15,
+      "unit": "kg",
+      "featured": true
+    },
+    {
+      "id": 16,
+      "name": "Orange Juice",
+      "category": "Beverages",
+      "price": 373,
+      "description": "100% pure squeezed orange juice. No added sugar or preservatives.",
+      "image": "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=400",
+      "stock": 110,
+      "discount": 0,
+      "unit": "bottle",
+      "featured": false
+    },
+    {
+      "id": 17,
+      "name": "Green Tea Pack",
+      "category": "Beverages",
+      "price": 580,
+      "description": "Premium Japanese green tea bags. Pack of 50 for daily wellness.",
+      "image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400",
+      "stock": 65,
+      "discount": 20,
+      "unit": "box",
+      "featured": true
+    },
+    {
+      "id": 18,
+      "name": "Sparkling Water",
+      "category": "Beverages",
+      "price": 248,
+      "description": "Refreshing sparkling mineral water. Pack of 6 bottles.",
+      "image": "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=400",
+      "stock": 4,
+      "discount": 0,
+      "unit": "pack",
+      "featured": false
+    },
+    {
+      "id": 19,
+      "name": "Organic Eggs",
+      "category": "Dairy",
+      "price": 497,
+      "description": "Free-range organic eggs from pasture-raised hens. Dozen pack.",
+      "image": "https://images.unsplash.com/photo-1518569656558-1f25e69d93d7?w=400",
+      "stock": 95,
+      "discount": 0,
+      "unit": "dozen",
+      "featured": true
+    },
+    {
+      "id": 20,
+      "name": "Avocados",
+      "category": "Fruits",
+      "price": 456,
+      "description": "Perfectly ripe Hass avocados. Great for guacamole, toast, and salads.",
+      "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=400",
+      "stock": 70,
+      "discount": 0,
+      "unit": "bag",
+      "featured": true
+    },
+    {
+      "id": 21,
+      "name": "Fresh Carrots",
+      "category": "Vegetables",
+      "price": 165,
+      "description": "Crunchy organic carrots, perfect for juicing, snacking, or cooking.",
+      "image": "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400",
+      "stock": 10,
+      "discount": 0,
+      "unit": "bunch",
+      "featured": false
+    },
+    {
+      "id": 22,
+      "name": "Pasta Penne",
+      "category": "Pantry",
+      "price": 207,
+      "description": "Italian penne rigate pasta made from durum wheat semolina.",
+      "image": "https://images.unsplash.com/photo-1551462147-ff29053bfc14?w=400",
+      "stock": 180,
+      "discount": 0,
+      "unit": "pack",
+      "featured": false
+    },
+    {
+      "id": 23,
+      "name": "Extra Virgin Olive Oil",
+      "category": "Pantry",
+      "price": 829,
+      "description": "Premium cold-pressed extra virgin olive oil from Mediterranean olives.",
+      "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400",
+      "stock": 55,
+      "discount": 10,
+      "unit": "bottle",
+      "featured": true
+    },
+    {
+      "id": 24,
+      "name": "Basmati Rice",
+      "category": "Pantry",
+      "price": 539,
+      "description": "Long-grain aged basmati rice. Fragrant and fluffy when cooked.",
+      "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400",
+      "stock": 140,
+      "discount": 5,
+      "unit": "bag",
+      "featured": false
+    },
+    {
+      "name": "Pineapple",
+      "category": "Fruits",
+      "price": 250,
+      "description": "Sweet and tangy tropical pineapple.",
+      "image": "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=400",
+      "stock": 50,
+      "discount": 0,
+      "unit": "piece",
+      "featured": false,
+      "id": 25
+    },
+    {
+      "name": "Watermelon",
+      "category": "Fruits",
+      "price": 300,
+      "description": "Large juicy watermelon, perfect for summer.",
+      "image": "https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?w=400",
+      "stock": 30,
+      "discount": 0,
+      "unit": "piece",
+      "featured": true,
+      "id": 27
+    },
+    {
+      "name": "Mangoes",
+      "category": "Fruits",
+      "price": 400,
+      "description": "Premium Alphonso mangoes, rich and sweet.",
+      "image": "https://images.unsplash.com/photo-1553279768-865429fa0078?w=400",
+      "stock": 60,
+      "discount": 10,
+      "unit": "kg",
+      "featured": true,
+      "id": 28
+    },
+    {
+      "name": "Blueberries",
+      "category": "Fruits",
+      "price": 350,
+      "description": "Fresh antioxidant-rich blueberries.",
+      "image": "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=400",
+      "stock": 40,
+      "discount": 0,
+      "unit": "box",
+      "featured": false,
+      "id": 29
+    },
+    {
+      "name": "Tomatoes",
+      "category": "Vegetables",
+      "price": 60,
+      "description": "Farm-fresh red ripe tomatoes.",
+      "image": "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400",
+      "stock": 200,
+      "discount": 0,
+      "unit": "kg",
+      "featured": false,
+      "id": 30
+    },
+    {
+      "name": "Onions",
+      "category": "Vegetables",
+      "price": 40,
+      "description": "Dry red onions, essential for every kitchen.",
+      "image": "https://images.unsplash.com/photo-1620574387735-3624d75b2dbc?w=400",
+      "stock": 300,
+      "discount": 0,
+      "unit": "kg",
+      "featured": false,
+      "id": 31
+    },
+    {
+      "name": "Potatoes",
+      "category": "Vegetables",
+      "price": 50,
+      "description": "Daily cooking potatoes, versatile and filling.",
+      "image": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400",
+      "stock": 400,
+      "discount": 5,
+      "unit": "kg",
+      "featured": true,
+      "id": 32
+    },
+    {
+      "name": "Cucumbers",
+      "category": "Vegetables",
+      "price": 30,
+      "description": "Crisp and hydrating fresh cucumbers.",
+      "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400",
+      "stock": 150,
+      "discount": 0,
+      "unit": "kg",
+      "featured": false,
+      "id": 33
+    },
+    {
+      "name": "Cauliflower",
+      "category": "Vegetables",
+      "price": 80,
+      "description": "Fresh large cauliflower head.",
+      "image": "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?w=400",
+      "stock": 60,
+      "discount": 0,
+      "unit": "piece",
+      "featured": false,
+      "id": 34
+    },
+    {
+      "name": "Almond Milk",
+      "category": "Dairy",
+      "price": 220,
+      "description": "Unsweetened plant-based almond milk.",
+      "image": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?w=400",
+      "stock": 60,
+      "discount": 0,
+      "unit": "bottle",
+      "featured": true,
+      "id": 39
+    },
+    {
+      "name": "Croissants",
+      "category": "Bakery",
+      "price": 120,
+      "description": "Butter flaky croissants, freshly baked.",
+      "image": "https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=400",
+      "stock": 40,
+      "discount": 0,
+      "unit": "pack of 2",
+      "featured": true,
+      "id": 40
+    },
+    {
+      "name": "Chocolate Muffins",
+      "category": "Bakery",
+      "price": 150,
+      "description": "Rich double chocolate muffins.",
+      "image": "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=400",
+      "stock": 50,
+      "discount": 0,
+      "unit": "pack of 4",
+      "featured": false,
+      "id": 41
+    },
+    {
+      "name": "Baguette",
+      "category": "Bakery",
+      "price": 80,
+      "description": "Traditional French baguette.",
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400",
+      "stock": 25,
+      "discount": 0,
+      "unit": "loaf",
+      "featured": false,
+      "id": 42
+    },
+    {
+      "name": "Mutton Chops",
+      "category": "Meat",
+      "price": 850,
+      "description": "Tender lamb chops.",
+      "image": "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?w=400",
+      "stock": 30,
+      "discount": 5,
+      "unit": "kg",
+      "featured": false,
+      "id": 46
+    },
+    {
+      "name": "Pork Sausages",
+      "category": "Meat",
+      "price": 400,
+      "description": "Premium breakfast sausages.",
+      "image": "https://images.unsplash.com/photo-1585325701165-351af916e581?w=400",
+      "stock": 45,
+      "discount": 0,
+      "unit": "pack",
+      "featured": false,
+      "id": 47
+    },
+    {
+      "name": "Bacon",
+      "category": "Meat",
+      "price": 500,
+      "description": "Smoked streaky bacon slices.",
+      "image": "https://images.unsplash.com/photo-1528607929212-2636ec44253e?w=400",
+      "stock": 40,
+      "discount": 0,
+      "unit": "pack",
+      "featured": false,
+      "id": 48
+    },
+    {
+      "name": "Turkey Roast",
+      "category": "Meat",
+      "price": 900,
+      "description": "Whole turkey for roasting.",
+      "image": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=400",
+      "stock": 15,
+      "discount": 10,
+      "unit": "whole",
+      "featured": true,
+      "id": 49
+    },
+    {
+      "name": "Cola",
+      "category": "Beverages",
+      "price": 60,
+      "description": "Classic carbonated cola drink.",
+      "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400",
+      "stock": 200,
+      "discount": 0,
+      "unit": "bottle",
+      "featured": false,
+      "id": 50
+    },
+    {
+      "name": "Coffee Beans",
+      "category": "Beverages",
+      "price": 450,
+      "description": "Roasted Arabica coffee beans.",
+      "image": "https://images.unsplash.com/photo-1559525839-b184a4d698c7?w=400",
+      "stock": 50,
+      "discount": 5,
+      "unit": "pack",
+      "featured": true,
+      "id": 52
+    },
+    {
+      "name": "Sports Drink",
+      "category": "Beverages",
+      "price": 80,
+      "description": "Electrolyte replenishing sports drink.",
+      "image": "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=400",
+      "stock": 90,
+      "discount": 0,
+      "unit": "bottle",
+      "featured": false,
+      "id": 53
+    },
+    {
+      "name": "Lemonade",
+      "category": "Beverages",
+      "price": 100,
+      "description": "Freshly squeezed homemade style lemonade.",
+      "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400",
+      "stock": 70,
+      "discount": 0,
+      "unit": "bottle",
+      "featured": false,
+      "id": 54
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Fruits",
+      "icon": "🍎",
+      "image": "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=400"
+    },
+    {
+      "id": 2,
+      "name": "Vegetables",
+      "icon": "eco",
+      "image": "https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?w=400"
+    },
+    {
+      "id": 3,
+      "name": "Dairy",
+      "icon": "water_drop",
+      "image": "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=400"
+    },
+    {
+      "id": 4,
+      "name": "Bakery",
+      "icon": "bakery_dining",
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400"
+    },
+    {
+      "id": 5,
+      "name": "Meat",
+      "icon": "restaurant",
+      "image": "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400"
+    },
+    {
+      "id": 6,
+      "name": "Beverages",
+      "icon": "local_cafe",
+      "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400"
+    },
+    {
+      "id": 7,
+      "name": "Pantry",
+      "icon": "kitchen",
+      "image": "https://images.unsplash.com/photo-1584286595398-a59f21d313f5?w=400"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@grocery.com",
+      "password": "admin123",
+      "role": "admin",
+      "address": "123 Admin St",
+      "phone": "555-0100"
+    },
+    {
+      "id": 2,
+      "name": "Tom Customer",
+      "email": "tom@example.com",
+      "password": "tom123",
+      "role": "customer",
+      "address": "456 Oak Ave",
+      "phone": "555-0200"
+    },
+    {
+      "name": "Tom Boby Alex",
+      "email": "tomboby30@gmail.com",
+      "password": "heyy123",
+      "role": "customer",
+      "phone": "95910 73733",
+      "address": "kannur",
+      "id": 3
+    },
+    {
+      "name": "tom",
+      "email": "tomboby30@gmail.com",
+      "password": "12345678",
+      "role": "customer",
+      "phone": "532685326",
+      "address": "kannur",
+      "id": 4
+    },
+    {
+      "name": "heyy",
+      "email": "tomboby30@gmail.com",
+      "password": "yooooooo",
+      "role": "customer",
+      "phone": "23456789",
+      "address": "fvdv",
+      "id": 5
+    },
+    {
+      "name": "fewgrdbg",
+      "email": "tomboby@gmail.con",
+      "password": "yaaaaaaa",
+      "role": "customer",
+      "phone": "342567899",
+      "address": "tghn",
+      "id": 6
+    },
+    {
+      "name": "dvsfbgn",
+      "email": "tomboby@gmail.com",
+      "password": "yaaaaaaa",
+      "role": "customer",
+      "phone": "9000909090",
+      "address": "bfvrd",
+      "id": 7
+    },
+    {
+      "name": "gfhjk",
+      "email": "tombobyalexkk@gmail.com",
+      "password": "rrrrrrrr",
+      "role": "customer",
+      "phone": "32456789",
+      "address": "gre",
+      "id": 8
+    }
+  ],
+  "orders": [
+    {
+      "userId": 4,
+      "items": [
+        {
+          "productId": 2,
+          "productName": "Red Apples",
+          "price": 261,
+          "quantity": 1,
+          "image": "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400"
+        }
+      ],
+      "total": 261,
+      "address": "kannur, cds 1234",
+      "phone": "532685326",
+      "status": "cancelled",
+      "date": "2026-03-08T10:38:31.490Z",
+      "paymentMethod": "Credit Card",
+      "id": 3
+    },
+    {
+      "userId": 5,
+      "items": [
+        {
+          "productId": 2,
+          "productName": "Red Apples",
+          "price": 261,
+          "quantity": 1,
+          "image": "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400"
+        }
+      ],
+      "total": 261,
+      "address": "fvdv, twerythyu 12434576",
+      "phone": "23456789",
+      "status": "pending",
+      "date": "2026-03-08T12:00:13.728Z",
+      "paymentMethod": "Credit Card",
+      "id": 4
+    },
+    {
+      "userId": 5,
+      "items": [
+        {
+          "productId": 6,
+          "productName": "Sweet Bell Peppers",
+          "price": 302.59999999999997,
+          "quantity": 2,
+          "image": "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400"
+        },
+        {
+          "productId": 1,
+          "productName": "Fresh Bananas",
+          "price": 107,
+          "quantity": 2,
+          "image": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400"
+        }
+      ],
+      "total": 819.1999999999999,
+      "address": "fvdv, efg 4232546",
+      "phone": "23456789",
+      "status": "delivered",
+      "date": "2026-03-08T12:25:21.867Z",
+      "paymentMethod": "Credit Card",
+      "id": 5
+    },
+    {
+      "userId": 5,
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Fresh Bananas",
+          "price": 107,
+          "quantity": 1,
+          "image": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400"
+        }
+      ],
+      "total": 107,
+      "address": "fvdv, dsv 43456",
+      "phone": "23456789",
+      "status": "pending",
+      "date": "2026-03-08T12:26:43.698Z",
+      "paymentMethod": "Credit Card",
+      "id": 6
+    },
+    {
+      "userId": 5,
+      "items": [
+        {
+          "productId": 2,
+          "productName": "Red Apples",
+          "price": 261,
+          "quantity": 1,
+          "image": "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400"
+        }
+      ],
+      "total": 261,
+      "address": "fvdv,  v 432432",
+      "phone": "23456789",
+      "status": "pending",
+      "date": "2026-03-08T12:27:13.869Z",
+      "paymentMethod": "Credit Card",
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Fresh Bananas",
+          "price": 107,
+          "quantity": 2,
+          "image": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400"
+        }
+      ],
+      "total": 214,
+      "address": "456 Oak Ave, 34567 56789",
+      "phone": "555-0200",
+      "status": "confirmed",
+      "date": "2026-03-08T12:39:17.507Z",
+      "paymentMethod": "Credit Card",
+      "id": 8
+    },
+    {
+      "userId": 2,
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Fresh Bananas",
+          "price": 170,
+          "quantity": 1,
+          "image": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400"
+        }
+      ],
+      "total": 270,
+      "address": "456 Oak Ave, efv 13123",
+      "phone": "555-0200",
+      "status": "delivered",
+      "date": "2026-03-08T14:42:20.696Z",
+      "paymentMethod": "Cash on Delivery",
+      "id": 9
+    }
+  ],
+  "feedbacks": [
+    {
+      "userId": 2,
+      "userName": "Tom Customer",
+      "rating": 3,
+      "suggestion": "yooo",
+      "message": "goood",
+      "date": "2026-03-08T12:47:36.527Z",
+      "id": 1
+    }
+  ]
+}

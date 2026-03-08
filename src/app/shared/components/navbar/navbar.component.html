@@ -1,0 +1,61 @@
+<mat-toolbar class="navbar">
+  <div class="navbar-container">
+    <a routerLink="/" class="brand">
+      <mat-icon class="brand-icon">storefront</mat-icon>
+      <span class="brand-text">FreshMart</span>
+    </a>
+
+    <div class="nav-links">
+      <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+        <mat-icon>home</mat-icon>
+        <span class="link-text">Home</span>
+      </a>
+      <a mat-button routerLink="/products" routerLinkActive="active-link">
+        <mat-icon>shopping_basket</mat-icon>
+        <span class="link-text">Products</span>
+      </a>
+      <a mat-button routerLink="/cart" routerLinkActive="active-link">
+        <mat-icon [matBadge]="cartCount" matBadgeColor="warn" [matBadgeHidden]="cartCount === 0" matBadgeSize="small">
+          shopping_cart
+        </mat-icon>
+        <span class="link-text">Cart</span>
+      </a>
+      <a mat-button routerLink="/orders" routerLinkActive="active-link" *ngIf="isLoggedIn">
+        <mat-icon>receipt_long</mat-icon>
+        <span class="link-text">Orders</span>
+      </a>
+      <a mat-button (click)="openContactDialog('tomboby30@gmail.com')">
+        <mat-icon>support_agent</mat-icon>
+        <span class="link-text">Customer Care</span>
+      </a>
+      <a mat-button routerLink="/admin" routerLinkActive="active-link" *ngIf="isAdmin" class="admin-link">
+        <mat-icon>admin_panel_settings</mat-icon>
+        <span class="link-text">Admin</span>
+      </a>
+    </div>
+
+    <div class="nav-actions">
+      <ng-container *ngIf="isLoggedIn; else loginButtons">
+        <button mat-button [matMenuTriggerFor]="userMenu" class="user-btn">
+          <mat-icon>account_circle</mat-icon>
+          <span class="link-text">{{ userName }}</span>
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #userMenu="matMenu">
+          <button mat-menu-item routerLink="/orders">
+            <mat-icon>receipt_long</mat-icon>
+            <span>My Orders</span>
+          </button>
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+      </ng-container>
+      <ng-template #loginButtons>
+        <a mat-stroked-button routerLink="/login" class="login-btn">Login</a>
+        <a mat-flat-button routerLink="/signup" color="primary" class="signup-btn">Sign Up</a>
+      </ng-template>
+    </div>
+  </div>
+</mat-toolbar>
